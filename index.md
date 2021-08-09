@@ -1,37 +1,127 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
 
-You can use the [editor on GitHub](https://github.com/KMcLaurin12/D3-Challenge/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<head>
+    <meta charset="UTF-8">
+    <title>D3Times</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/d3Style.css">
 
-### Markdown
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+</head>
 
-```markdown
-Syntax highlighted code block
+<body>
+    <div class="container-fluid px-0">
+        <header class="m-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary m-0">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/newspaper.svg" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy"> D3Times
+                </a>
 
-# Header 1
-## Header 2
-### Header 3
+            </nav>
+        </header>
 
-- Bulleted
-- List
+        <div class="row m-2 mt-3">
+            <div class="col-xs-12  col-md-9">
+                <div class="article header-font">
+                    <h3>Correlations Discovered Between Health Risks and Demographics</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-9">
+                <div id="scatter" class="mt-2">
+                    <!-- We append our chart here. -->
+                </div>
+            </div>
+        </div>
 
-1. Numbered
-2. List
+        <div class="row mx-5 mb-4">
+            <div class="card-deck mx-auto">
+                <div class="card bg-light" id="poverty-healthcare">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Poverty vs. Healthcare</h5>
+                        <p class="card-text p-2">There is a weak positive correlation between these two factors. We can see that the greater the poverty, the more healthcare is lacking. However, there are some states somewhat lacking healthcare despite their poverty rates being
+                            lower (Wyoming, Alaska).</p>
+                    </div>
+                </div>
+                <div class="card bg-light" id="poverty-smokes">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Poverty vs. Smoking</h5>
+                        <p class="card-text p-2">The percentage of smokers seem to be consistent across the board when compared with poverty, with a slight increase as poverty increases.</p>
+                    </div>
+                </div>
+                <div class="card bg-light" id="poverty-obesity">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Poverty vs. Obesity</h5>
+                        <p class="card-text p-2">Obesity seems to be a common health risk in the US, with consistent patterns across states despite poverty rates.</p>
+                    </div>
+                </div>
 
-**Bold** and _Italic_ and `Code` text
+                <div class="card bg-light" id="age-healthcare">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Age vs. Healthcare</h5>
+                        <p class="card-text p-2">The majority of people lacking healthcare tend to fall between the age of 36-40 in most US states. Texas appears to be the state where most people lack healthcare. </p>
+                    </div>
+                </div>
+                <div class="card bg-light" id="age-smokes">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Age vs. Smoking</h5>
+                        <p class="card-text p-2">Smoking appears to be a health risk posed to older people (>36 years) in most of the US states.</p>
+                    </div>
+                </div>
+                <div class="card bg-light" id="age-obesity">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Age vs. Obesity</h5>
+                        <p class="card-text p-2">Obesity is on the high in states where the median age is 36-40.</p>
+                    </div>
+                </div>
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+                <div class="card bg-light" id="income-healthcare">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Household Income vs. Healthcare</h5>
+                        <p class="card-text p-2">States with a higher median household income show better healthcare rates than those with lower incomes.</p>
+                    </div>
+                </div>
+                <div class="card bg-light" id="income-smokes">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Household Income vs. Smoking</h5>
+                        <p class="card-text p-2">Household income seems to have an effect on smoking, with lower incomes appearing to have more smoking risks than higher incomes.</p>
+                    </div>
+                </div>
+                <div class="card bg-light" id="income-obesity">
+                    <div class="card-body p-0">
+                        <h5 class="card-header header-font">Household Income vs. Obesity</h5>
+                        <p class="card-text p-2">Obesity is generally high across states but compared to income, we see more states with lower income towards the high end of obesity, possibly due to inexpensive fast food culture in the US.</p>
+                    </div>
+                </div>
+            </div>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KMcLaurin12/D3-Challenge/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+        </div>
 
-### Support or Contact
+    </div>
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+    <!-- Footer-->
+    <div id="footer" class="bg-secondary">
+        <p class="text-light">A <a target="_blank" href="https://github.com/neha-nayeem/D3-Challenge">D3.js Project</a> by Neha Nayeem &#169; 2020</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+
+
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+
+</html>
